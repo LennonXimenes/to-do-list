@@ -18,7 +18,6 @@ const verifyUserTodoPermission = async (req: Request, res: Response, next: NextF
             throw new AppError("Todo not found.", 404);
         }
 
-        // Verifique se os tipos correspondem ou use uma comparação estrita
         if (rows[0].users_id.toString() !== sub) {
             throw new AppError("Insufficient permissions.", 403);
         }

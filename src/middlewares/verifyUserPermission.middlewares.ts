@@ -2,12 +2,16 @@ import { NextFunction, Request, Response } from "express";
 import { AppError } from "../errors";
 
 const verifyUserPermission = (req: Request, res: Response, next: NextFunction): void => {
-    const { todoId } = req.params;
+    const { userId } = req.params;
     const { sub, admin } = res.locals.decoded;
+
+    console.log(userId)
+    console.log(sub)
+    console.log(admin)
 
     if (admin) return next();
 
-    if (todoId !== sub) {
+    if (userId !== sub) {
         throw new AppError("Insufficient permissions.", 403);
     }
 

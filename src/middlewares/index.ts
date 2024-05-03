@@ -6,5 +6,6 @@ import { validateTitleExists } from "./validateTitleExists.middlewares";
 import { validateUsernameExists } from "./validateUserNameExists.middlewares";
 import verifyToken from "./verifyToken.middlewares";
 import verifyUserPermission from "./verifyUserPermission.middlewares";
+import verifyUserTodoPermission from "./verifyUserTodoPermission.middlewares";
 
-export { handleErrors, uniqueEmail, validateBody, validateUsernameExists, verifyToken, validateIdExists, verifyUserPermission, validateTitleExists };
+export { handleErrors, uniqueEmail, validateBody, validateUsernameExists, verifyToken, validateIdExists, verifyUserPermission, validateTitleExists, verifyUserTodoPermission };
